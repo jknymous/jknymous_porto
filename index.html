@@ -5,547 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>JKNymous Portfolio</title>
-    <style>
-        /* Reset & base */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            height: 100%;
-            scroll-behavior: smooth;
-            background-color: #0d1117;
-            /* GitHub dark background */
-            color: #c9d1d9;
-            /* Light gray text */
-            font-family: 'Fira Mono', monospace, 'Courier New', monospace;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: #39A0ED;
-            /* Neon blue */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover,
-        a:focus {
-            color: #4FC3F7;
-            /* lighter neon blue */
-            outline: none;
-            text-shadow: 0 0 8px #4FC3F7aa;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            margin: 0 0 12px 0;
-            font-weight: 700;
-            line-height: 1.2;
-            color: #4FC3F7;
-            text-shadow: 0 0 6px #4fc3f777;
-        }
-
-        h1 {
-            font-size: 2.75rem;
-            letter-spacing: 0.04em;
-        }
-
-        h2 {
-            font-size: 1.75rem;
-            border-bottom: 2px solid #39A0ED;
-            padding-bottom: 6px;
-            margin-bottom: 24px;
-        }
-
-        h3 {
-            font-size: 1.25rem;
-            color: #4fc3f7cc;
-            text-shadow: 0 0 6px #4fc3f7aa;
-        }
-
-        p {
-            margin: 0 0 1.2em 0;
-            color: #8b949e;
-            font-size: 1.05rem;
-            font-weight: 400;
-        }
-
-        small {
-            color: #6e7681;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 40px 24px 60px;
-        }
-
-        /* Hero Section */
-        header {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            margin-bottom: 64px;
-            flex-wrap: wrap;
-            justify-content: center;
-            text-align: center;
-            padding-top: 40px;
-            animation: fadeInUp 0.9s ease forwards;
-        }
-
-        .profile-pic {
-            width: 210px;
-            height: 210px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 3.5px solid #39A0ED;
-            box-shadow: 0 0 28px 6px #39A0EDbb;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            flex-shrink: 0;
-            filter: drop-shadow(0 0 8px #39A0EDaa);
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.08) rotate(1deg);
-            box-shadow: 0 0 36px 8px #4fc3f7dd;
-            filter: drop-shadow(0 0 12px #4fc3f7dd);
-        }
-
-        .profile-info {
-            flex: 1 1 320px;
-            text-align: center;
-            max-width: 480px;
-        }
-
-        header h1 {
-            margin-bottom: 10px;
-            letter-spacing: 0.12em;
-            color: #4fc3f7;
-            font-size: 3.2rem;
-            text-shadow: 0 0 14px #4fc3f7dd;
-        }
-
-        header .dynamic-skill {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #39A0ED;
-            min-height: 36px;
-            white-space: nowrap;
-            border-right: 3px solid #39A0ED;
-            overflow: hidden;
-            letter-spacing: 0.04em;
-            text-shadow: 0 0 10px #39a0edbb;
-            margin-top: 10px;
-            animation: blinkCaret 1s step-end infinite;
-            font-family: 'Fira Mono', monospace;
-        }
-
-        @keyframes blinkCaret {
-
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: #39A0ED;
-            }
-        }
-
-        /* Sections */
-        section {
-            margin-bottom: 72px;
-            opacity: 0;
-            transform: translateY(25px);
-            animation-fill-mode: forwards;
-            animation-duration: 1s;
-            animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1);
-        }
-
-        section:nth-of-type(1) {
-            animation-delay: 0.4s;
-            animation-name: fadeInUp;
-        }
-
-        section:nth-of-type(2) {
-            animation-delay: 0.6s;
-            animation-name: fadeInUp;
-        }
-
-        section:nth-of-type(3) {
-            animation-delay: 0.8s;
-            animation-name: fadeInUp;
-        }
-
-        section:nth-of-type(4) {
-            animation-delay: 1.0s;
-            animation-name: fadeInUp;
-        }
-
-        section:nth-of-type(5) {
-            animation-delay: 1.2s;
-            animation-name: fadeInUp;
-        }
-
-        section:nth-of-type(6) {
-            animation-delay: 1.4s;
-            animation-name: fadeInUp;
-        }
-
-        section:nth-of-type(7) {
-            animation-delay: 1.6s;
-            animation-name: fadeInUp;
-        }
-
-        section:nth-of-type(8) {
-            animation-delay: 1.8s;
-            animation-name: fadeInUp;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Cards and lists */
-        .study-list,
-        .skill-list,
-        .cert-list,
-        .work-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .study-list li,
-        .cert-list li,
-        .work-list li {
-            background: #161b22;
-            /* dark navy */
-            margin-bottom: 22px;
-            padding: 20px 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 14px #39a0ed66;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-            color: #79bbe9;
-            font-family: 'Fira Mono', monospace;
-        }
-
-        .study-list li:hover,
-        .cert-list li:hover,
-        .work-list li:hover {
-            background: #21262d;
-            box-shadow: 0 6px 24px #4fc3f799;
-            color: #4fc3f7;
-        }
-
-        .project-list {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            padding-bottom: 12px;
-            -webkit-overflow-scrolling: touch;
-            padding-left: 4px;
-            scrollbar-width: thin;
-            scrollbar-color: #39A0ED #161b22;
-        }
-
-        .project-list::-webkit-scrollbar {
-            height: 10px;
-        }
-
-        .project-list::-webkit-scrollbar-track {
-            background: #161b22;
-            border-radius: 10px;
-        }
-
-        .project-list::-webkit-scrollbar-thumb {
-            background-color: #39A0ED;
-            border-radius: 10px;
-            border: 2px solid #161b22;
-        }
-
-        .project-list li {
-            background: #0d1117;
-            flex: 0 0 340px;
-            border-radius: 12px;
-            box-shadow: 0 6px 22px #39a0edbb;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 28px 24px;
-            color: #4fc3f7;
-            font-family: 'Fira Mono', monospace;
-            cursor: default;
-        }
-
-        .project-list li:hover {
-            background: #161b22;
-            box-shadow: 0 12px 32px #4fc3f7cc;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 4px 18px #39a0edbb;
-            transition: transform 0.35s ease;
-            margin-bottom: 18px;
-        }
-
-        .project-list li:hover .project-image {
-            transform: scale(1.07);
-            box-shadow: 0 10px 28px #39a0edcc;
-        }
-
-        .project-content {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .project-title {
-            font-weight: 700;
-            color: #39A0ED;
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-shadow: 0 0 12px #39a0edbb;
-        }
-
-        .project-desc {
-            font-size: 1.05rem;
-            line-height: 1.45;
-            margin-bottom: 14px;
-            color: #79bbe9cc;
-        }
-
-        .project-github-link {
-            align-self: flex-start;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            background-color: #161b22;
-            color: #39A0ED;
-            font-weight: 700;
-            font-size: 1rem;
-            border: 2px solid #39A0ED;
-            text-decoration: none;
-            box-shadow: 0 3px 14px #399de966;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            user-select: none;
-        }
-
-        .project-github-link svg {
-            fill: #39A0ED;
-            width: 20px;
-            height: 20px;
-        }
-
-        .project-github-link:hover,
-        .project-github-link:focus {
-            background-color: #4FC3F7;
-            color: #0d1117;
-            border-color: #39a0ed;
-            box-shadow: 0 0 26px #4fc3f7cc;
-            outline: none;
-        }
-
-        /* Skill list */
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px 24px;
-            margin-top: 16px;
-            color: #79bbe9;
-            font-family: 'Fira Mono', monospace;
-        }
-
-        .skill-item {
-            background: #161b22;
-            border: 2.5px solid #39A0ED;
-            padding: 12px 20px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #39A0ED;
-            box-shadow: 0 3px 14px #399de966;
-            user-select: none;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .skill-item:hover {
-            background-color: #4fc3f7;
-            color: #0d1117;
-            box-shadow: 0 0 26px #4fc3f7cc;
-            cursor: default;
-        }
-
-        /* Contact */
-        .contact-list {
-            display: flex;
-            justify-content: center;
-            gap: 34px;
-            margin-top: 20px;
-        }
-
-        .contact-list a {
-            font-size: 2.4rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border: 3px solid #39A0ED;
-            border-radius: 50%;
-            transition: all 0.35s ease;
-            color: #39A0ED;
-            background: transparent;
-            box-shadow: 0 0 24px #399de966;
-        }
-
-        .contact-list a:hover {
-            background-color: #4fc3f7;
-            color: #0d1117;
-            box-shadow: 0 0 38px #4fc3f7cc;
-        }
-
-        /* Icons for contact are inline SVG in HTML */
-        /* Footer/credits */
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #2a374d;
-            margin-top: 56px;
-            text-shadow: none;
-            padding-bottom: 24px;
-        }
-
-        /* Responsive tweaks */
-        @media (max-width: 980px) {
-            .container {
-                padding: 32px 28px 60px;
-                max-width: 900px;
-            }
-
-            .profile-pic {
-                width: 180px;
-                height: 180px;
-            }
-        }
-
-        @media (max-width: 780px) {
-            .container {
-                padding: 28px 20px 60px;
-                max-width: 480px;
-            }
-
-            .project-list {
-                gap: 18px;
-                padding-left: 4px;
-            }
-
-            .project-list li {
-                flex: 0 0 280px;
-                padding: 22px 18px;
-            }
-
-            .project-image {
-                height: 160px;
-            }
-
-            .project-content {
-                text-align: center;
-                align-items: center;
-            }
-
-            .project-title {
-                justify-content: center;
-                font-size: 1.3rem;
-            }
-
-            .project-github-link {
-                justify-content: center;
-                margin: 0 auto;
-            }
-
-            .profile-pic {
-                width: 160px;
-                height: 160px;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .container {
-                padding: 20px 16px 40px;
-                max-width: 350px;
-            }
-
-            header {
-                justify-content: center;
-                text-align: center;
-            }
-
-            header h1 {
-                font-size: 2.3rem;
-            }
-
-            header h4 {
-                font-size: 1.05rem;
-            }
-
-            .profile-pic {
-                width: 140px;
-                height: 140px;
-                margin-bottom: 20px;
-            }
-
-            .project-title {
-                font-size: 1.2rem;
-            }
-
-            .project-desc {
-                font-size: 1rem;
-            }
-
-            .contact-list {
-                gap: 24px;
-            }
-
-            .contact-list a {
-                font-size: 2rem;
-                width: 48px;
-                height: 48px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container" role="main" aria-label="Portfolio website of professional profile">
         <header>
-            <img src="jerry.jpg" alt="Profile picture of JKNymous" class="profile-pic" />
+            <img src="jerry.png" alt="Profile picture of Bima Pratama" class="profile-pic" />
             <div class="profile-info">
                 <h1>JKNymous (Jerry)</h1>
                 <div class="dynamic-skill" aria-live="polite" aria-atomic="true" aria-relevant="text"></div>
@@ -554,14 +20,18 @@
 
         <section id="about" tabindex="0" aria-label="About section">
             <h2>About Me</h2>
-            <p>I build end-to-end digital solutions—scaling from robust backend architectures to responsive frontend
+            <p>
+                I build end-to-end digital solutions—scaling from robust backend architectures to responsive frontend
                 interfaces, with user-centric design at the core. As a Full Stack Developer and UI/UX Designer, I bridge
                 the gap between engineering and experience. I also integrate machine learning models to drive smarter
                 features, automate decisions, and personalize interactions. For me, clean code, seamless UX, and
-                data-driven intelligence arent just goals—theyre the baseline.</p>
-            <p>MCurrently, I am expanding my knowledge by exploring Web3 and blockchain technologies as part of my
+                data-driven intelligence arent just goals—theyre the baseline.
+            </p>
+            <p>
+                Currently, I am expanding my knowledge by exploring Web3 and blockchain technologies as part of my
                 continuous learning journey. With a combination of technical, design, and analytical skills, I am
-                committed to creating innovative, effective, and impactful digital solutions.</p>
+                committed to creating innovative, effective, and impactful digital solutions.
+            </p>
         </section>
 
         <section id="study-history" tabindex="0" aria-label="Study history section">
@@ -582,18 +52,20 @@
             <h2>Work Experience</h2>
             <ul class="work-list">
                 <li>
-                    <strong>Senior Full Stack Developer</strong> - <em>Tech Solutions Ltd., 2019 - Present</em><br />
-                    Lead developer for front-end and back-end projects, managing a team of developers and implementing
-                    agile methodologies.
+                    <strong>Senior Full Stack Developer</strong> - <em>Tech Solutions Ltd., 2019
+                        - Present</em><br />
+                    Lead developer for front-end and back-end projects, managing a team of
+                    developers and implementing agile methodologies.
                 </li>
                 <li>
                     <strong>Web Developer</strong> - <em>Creative Apps Inc., 2016 - 2019</em><br />
-                    Developed and maintained customer web applications, collaborated with UX designers, and optimized
-                    performance.
+                    Developed and maintained customer web applications, collaborated with UX
+                    designers, and optimized performance.
                 </li>
                 <li>
                     <strong>Junior Developer</strong> - <em>Startup Labs, 2014 - 2016</em><br />
-                    Assisted in building the MVP for new tech startup, focusing on both front-end and back-end tasks.
+                    Assisted in building the MVP for new tech startup, focusing on both
+                    front-end and back-end tasks.
                 </li>
             </ul>
         </section> -->
@@ -601,18 +73,10 @@
         <section id="certifications" tabindex="0" aria-label="Certifications section">
             <h2>Certifications</h2>
             <ul class="cert-list">
-                <li>
-                    <strong>Certificate Project Management Associate (Logical Operation)</strong> — 2021
-                </li>
-                <li>
-                    <strong>BC400 - ABAP Workbench (Edugate)</strong> — 2021
-                </li>
-                <li>
-                    <strong>Agile Scrum Fundamentals (Quint Wellington Redwood)</strong> — 2022
-                </li>
-                <li>
-                    <strong>Adobe Certified Professional (ACP)</strong> — 2023
-                </li>
+                <li><strong>Certificate Project Management Associate (Logical Operation)</strong> — 2021</li>
+                <li><strong>BC400 - ABAP Workbench (Edugate)</strong> — 2021</li>
+                <li><strong>Agile Scrum Fundamentals (Quint Wellington Redwood)</strong> — 2022</li>
+                <li><strong>Adobe Certified Professional (ACP)</strong> — 2023</li>
             </ul>
         </section>
 
@@ -636,73 +100,23 @@
         <section id="projects" tabindex="0" aria-label="Projects section">
             <h2>Projects</h2>
             <ul class="project-list">
-                <li>
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=400&amp;q=80"
-                        alt="SmartInventory project screenshot" class="project-image" />
-                    <div class="project-content">
-                        <div class="project-title">SmartInventory
-                            <a href="https://github.com/bimacodes/smartinventory" target="_blank"
-                                rel="noopener noreferrer" class="project-github-link"
-                                aria-label="GitHub repository for SmartInventory project" title="GitHub Repository">
-                                <svg role="img" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.304 3.438 9.8 8.205 11.387.6.112.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.086 1.838 1.238 1.838 1.238 1.07 1.832 2.807 1.303 3.492.997.108-.775.418-1.303.762-1.602-2.665-.3-5.466-1.334-5.466-5.932 0-1.312.47-2.38 1.236-3.22-.124-.303-.536-1.522.116-3.176 0 0 1.008-.322 3.3 1.23a11.47 11.47 0 0 1 3-.404c1.02.004 2.045.138 3 .404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.654.242 2.873.118 3.176.77.842 1.235 1.909 1.235 3.22 0 4.61-2.807 5.628-5.479 5.922.432.37.815 1.1.815 2.222v3.293c0 .321.216.694.825.576 4.765-1.587 8.199-6.083 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                </svg>
-                                GitHub
-                            </a>
-                        </div>
-                        <p class="project-desc">An intelligent inventory management system with real-time analytics for
-                            retail businesses. Built with React, Node.js, and MongoDB, featuring intuitive dashboards
-                            and mobile support.</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&amp;fit=crop&amp;w=400&amp;q=80"
-                        alt="TravelMate App project screenshot" class="project-image" />
-                    <div class="project-content">
-                        <div class="project-title">TravelMate App
-                            <a href="https://github.com/bimacodes/travelmate" target="_blank" rel="noopener noreferrer"
-                                class="project-github-link" aria-label="GitHub repository for TravelMate App project"
-                                title="GitHub Repository">
-                                <svg role="img" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.304 3.438 9.8 8.205 11.387.6.112.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.086 1.838 1.238 1.838 1.238 1.07 1.832 2.807 1.303 3.492.997.108-.775.418-1.303.762-1.602-2.665-.3-5.466-1.334-5.466-5.932 0-1.312.47-2.38 1.236-3.22-.124-.303-.536-1.522.116-3.176 0 0 1.008-.322 3.3 1.23a11.47 11.47 0 0 1 3-.404c1.02.004 2.045.138 3 .404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.654.242 2.873.118 3.176.77.842 1.235 1.909 1.235 3.22 0 4.61-2.807 5.628-5.479 5.922.432.37.815 1.1.815 2.222v3.293c0 .321.216.694.825.576 4.765-1.587 8.199-6.083 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                </svg>
-                                GitHub
-                            </a>
-                        </div>
-                        <p class="project-desc">A mobile-friendly travel planning web app with itinerary sharing and
-                            recommendations. Developed using Next.js, Tailwind CSS, and integrated with third-party APIs
-                            for live weather and maps.</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=400&amp;q=80"
-                        alt="Personal Finance Tracker project screenshot" class="project-image" />
-                    <div class="project-content">
-                        <div class="project-title">Personal Finance Tracker
-                        </div>
-                        <p class="project-desc">A secure and privacy-first web app to track expenses, budgets, and
-                            savings goals. Implemented with Vue.js and Firebase for realtime synchronization and offline
-                            usage.</p>
-                    </div>
-                </li>
+                <!-- Projects will be generated by JS -->
             </ul>
         </section>
 
         <section id="contact" tabindex="0" aria-label="Contact section">
             <h2>Contact Me</h2>
-            <p>You can reach me easily via email or Instagram. I am open to exciting projects and collaborations!</p>
+            <p>
+                You can reach me easily via email or Instagram. I am open to exciting
+                projects and collaborations!
+            </p>
             <div class="contact-list" role="list">
-                <a href="mailto:bima.pratama@example.com" role="listitem" aria-label="Email me" title="Email me">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="28" width="28"
+                <a href="mailto:bima.pratama@example.com" role="listitem" aria-label="Email me" title="Email me"><svg
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="28" width="28"
                         viewBox="0 0 24 24" aria-hidden="true">
                         <path
                             d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                </a>
+                    </svg></a>
                 <a href="https://instagram.com/bimacodes" target="_blank" rel="noopener noreferrer" role="listitem"
                     aria-label="Instagram profile" title="Instagram profile">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="28" width="28"
@@ -719,49 +133,37 @@
         </footer>
     </div>
 
-    <script>
-        (function () {
-            // Dynamic typing effect for skill text
-            const skills = [
-                "Full Stack Web Dev",
-                "UI/UX Designer",
-                "Agile & Scrum Practitioner"
-            ];
-            const skillContainer = document.querySelector('.dynamic-skill');
-            let skillIndex = 0;
-            let charIndex = 0;
-            let typingDelay = 100;
-            let erasingDelay = 50;
-            let pauseBetween = 1500;
+    <!-- Modal Container -->
+    <div class="modal-backdrop" id="modalBackdrop" aria-modal="true" role="dialog" aria-labelledby="modalTitle"
+        aria-describedby="modalDesc">
+        <div class="modal-content" role="document">
+            <button class="modal-close-btn" aria-label="Close modal" id="modalCloseBtn">&times;</button>
+            <div class="modal-left">
+                <div class="modal-slider" id="modalSlider">
+                    <!-- Images slides inserted dynamically -->
+                </div>
+                <div class="modal-controls">
+                    <button class="modal-control-btn" id="prevSlide" aria-label="Previous image">&#8592;</button>
+                    <button class="modal-control-btn" id="nextSlide" aria-label="Next image">&#8594;</button>
+                </div>
+            </div>
+            <div class="modal-right">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <p class="modal-desc" id="modalDesc"></p>
+                <p class="modal-langs" id="modalLangs"></p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="github-button" id="modalGithubBtn"
+                    aria-label="View project on GitHub" title="GitHub Repository">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.304 3.438 9.8 8.205 11.387.6.112.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.086 1.838 1.238 1.838 1.238 1.07 1.832 2.807 1.303 3.492.997.108-.775.418-1.303.762-1.602-2.665-.3-5.466-1.334-5.466-5.932 0-1.312.47-2.38 1.236-3.22-.124-.303-.536-1.522.116-3.176 0 0 1.008-.322 3.3 1.23a11.47 11.47 0 0 1 3-.404c1.02.004 2.045.138 3 .404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.654.242 2.873.118 3.176.77.842 1.235 1.909 1.235 3.22 0 4.61-2.807 5.628-5.479 5.922.432.37.815 1.1.815 2.222v3.293c0 .321.216.694.825.576 4.765-1.587 8.199-6.083 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </div>
 
-            function type() {
-                if (charIndex < skills[skillIndex].length) {
-                    skillContainer.textContent += skills[skillIndex].charAt(charIndex);
-                    charIndex++;
-                    setTimeout(type, typingDelay);
-                } else {
-                    setTimeout(erase, pauseBetween);
-                }
-            }
-            function erase() {
-                if (charIndex > 0) {
-                    skillContainer.textContent = skills[skillIndex].substring(0, charIndex - 1);
-                    charIndex--;
-                    setTimeout(erase, erasingDelay);
-                } else {
-                    skillIndex++;
-                    if (skillIndex >= skills.length) skillIndex = 0;
-                    setTimeout(type, 500);
-                }
-            }
-            // Start typing effect on DOM ready
-            document.addEventListener("DOMContentLoaded", function () {
-                if (skills.length) setTimeout(type, 1000);
-            });
-        })();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
-</content>
-</create_file>
