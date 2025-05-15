@@ -257,14 +257,10 @@ section:nth-of-type(8) {
 
 /* Project List Styling */
 .project-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    overflow-x: auto;
-    padding-bottom: 12px;
-    -webkit-overflow-scrolling: touch;
-    padding-left: 4px;
-    scrollbar-width: thin;
-    scrollbar-color: #39a0ed #161b22;
+    padding-left: 0px;
 }
 
 .project-list::-webkit-scrollbar {
@@ -383,6 +379,7 @@ section:nth-of-type(8) {
     box-shadow: 0 0 36px #39a0edcc;
     position: relative;
     user-select: none;
+    flex-direction: column;
 }
 
 .modal-left {
@@ -435,12 +432,12 @@ section:nth-of-type(8) {
 }
 
 .modal-right {
-    flex: 1.4;
-    background: #0d1117;
     padding: 24px 32px;
     color: #c9d1d9;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    max-height: 70vh;
 }
 
 .modal-title {
@@ -452,12 +449,11 @@ section:nth-of-type(8) {
 }
 
 .modal-desc {
-    flex-grow: 1;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #8b949e;
-    margin-bottom: 20px;
     overflow-y: auto;
+    max-height: 250px;
+    /* for larger screens */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .modal-langs {
@@ -604,8 +600,9 @@ section:nth-of-type(8) {
     }
 
     .project-list {
-        gap: 18px;
-        padding-left: 4px;
+        /* gap: 18px;
+        padding-left: 4px; */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .project-list li {
@@ -636,12 +633,67 @@ section:nth-of-type(8) {
         width: 160px;
         height: 160px;
     }
+
+    .modal-content {
+        flex-direction: column;
+        max-height: 90vh;
+        height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-left,
+    .modal-right {
+        width: 100%;
+        flex: none;
+        max-height: none;
+    }
+
+    .modal-slider {
+        height: auto;
+        max-height: 300px;
+        /* limit image height */
+    }
+
+    .modal-right {
+        max-height: none;
+        padding: 16px 20px;
+        overflow: visible;
+    }
+
+    /* Ensure modal-right contents don't cause horizontal scroll */
+    .modal-title,
+    .modal-desc,
+    .modal-langs,
+    .github-button {
+        white-space: normal;
+        word-wrap: break-word;
+    }
 }
 
 @media (max-width: 480px) {
     .skill-item {
         font-size: 0.85rem !important;
         padding: 8px 12px !important;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+        /* 1 column on very small screens */
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+        /* Smaller title font */
+    }
+
+    .modal-desc {
+        font-size: 0.9rem;
+        /* Smaller description font */
+    }
+
+    .modal-langs {
+        font-size: 0.8rem;
+        /* Smaller languages font */
     }
 }
 
