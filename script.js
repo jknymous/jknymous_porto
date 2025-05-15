@@ -55,29 +55,29 @@
             github: "https://github.com/jknymous/hutang-grup-system",
             thumbnail: "assets/hutang/db_light.png"
         },
-        {
-            title: "TravelMate App",
-            images: [
-                "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
-            ],
-            description:
-                "A mobile-friendly travel planning web app with itinerary sharing and recommendations. Developed using Next.js, Tailwind CSS, and integrated with third-party APIs for live weather and maps.",
-            languages: ["Next.js", "Tailwind CSS", "APIs"],
-            github: "https://github.com/bimacodes/travelmate",
-            thumbnail: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
-        },
-        {
-            title: "Personal Finance Tracker",
-            images: [
-                "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
-            ],
-            description:
-                "A secure and privacy-first web app to track expenses, budgets, and savings goals. Implemented with Vue.js and Firebase for realtime synchronization and offline usage.",
-            languages: ["Vue.js", "Firebase"],
-            github: "",
-            thumbnail: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80"
-        }
+        // {
+        //     title: "TravelMate App",
+        //     images: [
+        //         "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+        //         "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
+        //     ],
+        //     description:
+        //         "A mobile-friendly travel planning web app with itinerary sharing and recommendations. Developed using Next.js, Tailwind CSS, and integrated with third-party APIs for live weather and maps.",
+        //     languages: ["Next.js", "Tailwind CSS", "APIs"],
+        //     github: "https://github.com/bimacodes/travelmate",
+        //     thumbnail: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
+        // },
+        // {
+        //     title: "Personal Finance Tracker",
+        //     images: [
+        //         "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+        //     ],
+        //     description:
+        //         "A secure and privacy-first web app to track expenses, budgets, and savings goals. Implemented with Vue.js and Firebase for realtime synchronization and offline usage.",
+        //     languages: ["Vue.js", "Firebase"],
+        //     github: "",
+        //     thumbnail: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80"
+        // }
     ];
 
     // Render project list

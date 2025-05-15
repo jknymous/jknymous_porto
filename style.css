@@ -671,6 +671,29 @@ section:nth-of-type(8) {
 }
 
 @media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header .dynamic-skill {
+        font-size: 1rem;
+    }
+
+    #about p,
+    #study-history li,
+    #certifications li {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+        /* reduce padding for small screens */
+    }
+
+    #about,
+    #study-history,
+    #certifications {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
     .skill-item {
         font-size: 0.85rem !important;
         padding: 8px 12px !important;
@@ -699,13 +722,14 @@ section:nth-of-type(8) {
 
 @media (max-width: 380px) {
     .container {
-        padding: 20px 16px 40px;
-        max-width: 350px;
+        padding: 20px 12px 40px;
+        max-width: 360px;
     }
 
     header {
         justify-content: center;
         text-align: center;
+        padding-top: 20px;
     }
 
     header h1 {
