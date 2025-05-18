@@ -675,11 +675,16 @@ section:nth-of-type(8) {
         font-size: 2rem;
     }
 
+    h2 {
+        font-size: 1.5rem;
+    }
+
     header .dynamic-skill {
         font-size: 1rem;
     }
 
     #about p,
+    #contact p,
     #study-history li,
     #certifications li {
         font-size: 0.85rem;
@@ -688,6 +693,7 @@ section:nth-of-type(8) {
     }
 
     #about,
+    #contact,
     #study-history,
     #certifications {
         padding-left: 8px;
@@ -717,6 +723,17 @@ section:nth-of-type(8) {
     .modal-langs {
         font-size: 0.8rem;
         /* Smaller languages font */
+    }
+
+    .contact-list a {
+        font-size: 1.8rem !important;
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    /* Pastikan ukuran saat hover juga konsisten */
+    .contact-list a:hover {
+        font-size: 1.8rem !important;
     }
 }
 
