@@ -414,22 +414,44 @@ section:nth-of-type(8) {
 .modal-controls {
     display: flex;
     justify-content: space-between;
-    padding: 12px 24px;
 }
 
 .modal-control-btn {
-    background: transparent;
-    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
     color: #39a0ed;
     font-size: 1.8rem;
+    border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
     user-select: none;
-    transition: color 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 0 8px #39a0edaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* Remove default padding to center icon */
+}
+
+#prevSlide {
+    left: 12px;
+}
+
+#nextSlide {
+    right: 12px;
 }
 
 .modal-control-btn:hover {
-    color: #4fc3f7;
+    background: rgba(79, 195, 247, 0.8);
+    color: #0d1117;
 }
+
 
 .modal-right {
     padding: 24px 32px;

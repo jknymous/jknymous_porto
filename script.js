@@ -44,6 +44,7 @@
         {
             title: "The Ledger of King Agus",
             images: [
+                "assets/hutang/login.png",
                 "assets/hutang/db_light.png",
                 "assets/hutang/db_dark.png",
                 "assets/hutang/index_light.png",
@@ -53,20 +54,33 @@
                 "This application was created to solve financial tracking issues commonly found in WhatsApp groups. Often, when hanging out or dining with friends, one person pays for everyone, and the rest owe their share. Traditionally, these debts are recorded manually, but since most guys and Gen Z rarely carry physical notebooks anymore, this system was built as a web-based solution for easier and more modern access. The app features two main tabs: Debt and Payment, both seamlessly integrated with a two- way netting system.This means that if the same person appears in both records, the system will automatically offset the debt in real - time. The platform includes separate interfaces for admin and public users, and supports both dark mode and light mode for a more comfortable user experience.",
             languages: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
             github: "https://github.com/jknymous/hutang-grup-system",
-            thumbnail: "assets/hutang/db_light.png"
+            thumbnail: "assets/hutang/login.png"
         },
-        // {
-        //     title: "TravelMate App",
-        //     images: [
-        //         "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-        //         "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
-        //     ],
-        //     description:
-        //         "A mobile-friendly travel planning web app with itinerary sharing and recommendations. Developed using Next.js, Tailwind CSS, and integrated with third-party APIs for live weather and maps.",
-        //     languages: ["Next.js", "Tailwind CSS", "APIs"],
-        //     github: "https://github.com/bimacodes/travelmate",
-        //     thumbnail: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
-        // },
+        {
+            title: "Prakerin System",
+            images: [
+                "assets/prakerin/login.png",
+                "assets/prakerin/db_admin.png",
+                "assets/prakerin/abs_admin.png",
+                "assets/prakerin/gr_admin.png",
+                "assets/prakerin/lpr_admin.png",
+                "assets/prakerin/mtr_admin.png",
+                "assets/prakerin/sw_admin.png",
+                "assets/prakerin/db_guru.png",
+                "assets/prakerin/abs_guru.png",
+                "assets/prakerin/lpr_guru.png",
+                "assets/prakerin/mtr_guru.png",
+                "assets/prakerin/sw_guru.png",
+                "assets/prakerin/db_siswa.png",
+                "assets/prakerin/abs_siswa.png",
+                "assets/prakerin/lpr_siswa.png"
+            ],
+            description:
+                "This project was developed during my internship as a digital solution to support the reporting and supervision process of Industrial Work Practice (Prakerin) at the school. The system is web-based, enabling users to access it anytime and anywhere. It features three user roles with tailored access. 1)Admin can manages teacher and student accounts, industry partners, attendance schedules, and report evaluations. 2)Teacher can supervises assigned students, creates and manages attendance schedules, and evaluates student reports. 3)Student can submits real- time attendance(with active location tracking), uploads internship reports, and views their status and scores. I built this system using Laravel for the backend framework, Tailwind CSS for a modern and responsive UI, and integrated the Google Maps API for real - time location functionality in the attendance system. The goal of this project is to help schools digitize and streamline the internship program process, making it more efficient, transparent, and well - organized through technology.",
+            languages: ["Tailwind", "Laravel", "Google API"],
+            github: "https://github.com/jknymous/prakerin_system",
+            thumbnail: "assets/prakerin/login.png"
+        },
         // {
         //     title: "Personal Finance Tracker",
         //     images: [
