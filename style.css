@@ -60,7 +60,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: #4fc3f7cc;
     text-shadow: 0 0 6px #4fc3f7aa;
 }
@@ -311,7 +311,7 @@ section:nth-of-type(8) {
 }
 
 .project-langs {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: #79bbe9cc;
     margin-top: auto;
     margin-bottom: 0;
@@ -463,23 +463,24 @@ section:nth-of-type(8) {
 }
 
 .modal-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 16px;
     color: #4fc3f7;
     text-shadow: 0 0 8px #4fc3f7bb;
+    text-align: center;
 }
 
 .modal-desc {
+    font-size: 0.9rem;
     overflow-y: auto;
     max-height: 250px;
-    /* for larger screens */
     width: 100%;
     box-sizing: border-box;
 }
 
 .modal-langs {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: #79bbe9cc;
     margin-bottom: 24px;
     font-style: italic;
@@ -490,7 +491,7 @@ section:nth-of-type(8) {
     background-color: #161b22;
     color: #39a0ed;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding: 10px 20px;
     border-radius: 8px;
     border: 2px solid #39a0ed;
@@ -701,6 +702,10 @@ section:nth-of-type(8) {
         font-size: 1.5rem;
     }
 
+    h3 {
+        font-size: 1rem;
+    }
+
     header .dynamic-skill {
         font-size: 1rem;
     }
@@ -732,18 +737,22 @@ section:nth-of-type(8) {
         /* 1 column on very small screens */
     }
 
+    .project-langs {
+        font-size: 0.8rem;
+    }
+
     .modal-title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         /* Smaller title font */
     }
 
     .modal-desc {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         /* Smaller description font */
     }
 
     .modal-langs {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         /* Smaller languages font */
     }
 
@@ -799,25 +808,6 @@ section:nth-of-type(8) {
         height: 48px;
     }
 
-}
-
-/* Additional styles for projects small images */
-.project-image-small {
-    max-height: 120px;
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-bottom: 12px;
-    user-select: none;
-}
-
-.project-langs {
-    font-size: 0.95rem;
-    color: #79bbe9cc;
-    margin-top: auto;
-    margin-bottom: 0;
-    font-style: italic;
-    user-select: none;
 }
 
 /* Modal scroll custom scrollbar */
